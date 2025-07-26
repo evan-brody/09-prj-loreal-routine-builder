@@ -7,131 +7,190 @@
 
 /* —— body + fonts —— */
 body {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", "Inter", "Segoe UI", Arial, Helvetica, sans-serif;
   color: #333;
   display: flex;
   justify-content: center;
+  background: linear-gradient(135deg, #fff 60%, #e3a53522 100%);
+  min-height: 100vh;
 }
 
 .page-wrapper {
-  width: 90%;
-  max-width: 900px;
+  width: 98%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 #ff003b22, 0 1.5px 8px 0 #e3a53522;
+  margin: 40px 0;
+  padding: 32px 28px 0 28px;
 }
 
 /* header */
 .site-header {
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 10px;
+  padding-top: 48px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #e3a535;
+  margin-bottom: 18px;
 }
 
 .logo {
-  width: 250px;
-  margin-bottom: 15px;
+  width: 220px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 2px 8px #e3a53544);
 }
 
 .site-title {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ff003b;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 0 #e3a53544;
+}
+
+/* Headings use Playfair Display and Inter for a modern, bold look */
+.site-title,
+.site-header h1,
+.selected-products h2,
+.chatbox h2,
+.product-card h3,
+.product-description-modal h3 {
+  font-family: "Inter", "Playfair Display", "Montserrat", Arial, Helvetica,
+    sans-serif;
+  font-weight: 800;
+  letter-spacing: 1.5px;
 }
 
 /* category filter */
 .search-section {
-  margin: 30px 0;
+  margin: 36px 0 18px 0;
   display: flex;
+  justify-content: center;
 }
 
 .search-section select {
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  border: 2px solid #000;
-  border-radius: 8px;
+  width: 60%;
+  padding: 18px;
+  font-size: 19px;
+  border: 2px solid #ff003b;
+  border-radius: 16px;
   cursor: pointer;
-  background-color: white;
+  background: linear-gradient(90deg, #fff 80%, #e3a53522 100%);
   font-weight: 500;
+  color: #ff003b;
+  box-shadow: 0 2px 8px #e3a53522;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .search-section select:focus {
   outline: none;
-  border-color: #666;
+  border-color: #e3a535;
+  box-shadow: 0 0 0 2px #e3a53544;
 }
 
 /* chat section */
 .chatbox {
-  margin: 40px 0;
-  border: 2px solid #000;
-  border-radius: 8px;
-  padding: 26px;
+  margin: 48px 0;
+  border: 2px solid #ff003b;
+  border-radius: 18px;
+  padding: 32px 28px;
+  background: linear-gradient(120deg, #fff 80%, #e3a53511 100%);
+  box-shadow: 0 2px 12px #e3a53522;
 }
 
 .chatbox h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 22px;
+  color: #ff003b;
+  font-weight: 800;
+  letter-spacing: 1.2px;
 }
 
 .chat-window {
-  padding: 20px;
-  font-size: 18px;
-  line-height: 1.5;
-  height: 250px;
+  padding: 22px;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+  height: 650px;
   overflow-y: auto;
   background: #fafafa;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  border: 1px solid #e3a535;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px #e3a53522;
+  /* Make chat history scrollable and readable */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
 }
 
 /* placeholder message */
 .placeholder-message {
+  font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
   width: 100%;
   text-align: center;
-  padding: 40px;
-  color: #666;
-  font-size: 18px;
+  padding: 44px;
+  color: #e3a535;
+  background: #fffbe6;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px #e3a53522;
 }
 
 /* input row */
 .chat-form {
   display: flex;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .chat-form input {
-  flex: 1;
-  padding: 12px;
+  font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
   font-size: 18px;
+  font-weight: 600;
+  flex: 1;
+  padding: 14px;
   border: none;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #e3a535;
   background: transparent;
+  border-radius: 0 0 8px 8px;
+  transition: border-bottom-color 0.3s;
 }
 
 .chat-form input:focus {
   outline: none;
-  border-bottom-color: #000;
+  border-bottom-color: #ff003b;
 }
 
 .chat-form button {
-  font-size: 18px;
-  background: #000;
+  font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff003b 80%, #e3a535 100%);
   color: #fff;
   border: none;
-  padding: 12px;
-  width: 48px;
-  height: 48px;
+  padding: 14px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #ff003b22;
 }
 
 .chat-form button:hover {
-  background: #666666;
+  background: linear-gradient(90deg, #e3a535 80%, #ff003b 100%);
+  box-shadow: 0 4px 12px #e3a53544;
 }
 
 .chat-form button:focus {
-  outline: 2px solid #000;
+  outline: 2px solid #e3a535;
   outline-offset: 2px;
 }
 
@@ -150,42 +209,67 @@ body {
 
 /* footer */
 .site-footer {
-  margin: 60px 0 40px;
+  margin: 70px 0 40px;
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
+  border-top: 2px solid #e3a535;
+  padding-top: 18px;
+  background: linear-gradient(90deg, #fff 80%, #e3a53511 100%);
+  border-radius: 0 0 24px 24px;
 }
 
 .site-footer nav {
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .site-footer a {
-  margin: 0 8px;
-  color: #000;
+  margin: 0 10px;
+  color: #ff003b;
   text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
 }
 
 .site-footer a:hover {
-  color: #666666;
+  color: #e3a535;
 }
 
 /* products grid */
 .products-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin: 30px 0;
+  gap: 24px;
+  margin: 36px 0;
+  justify-content: center;
 }
 
 .product-card {
-  flex: 0 1 calc(33.333% - 14px);
-  border: 1px solid #ccc;
-  padding: 15px;
-  border-radius: 4px;
+  flex: 0 1 calc(33.333% - 18px);
+  border: 1.5px solid #e3a535;
+  padding: 18px;
+  border-radius: 16px;
   display: flex;
-  gap: 15px;
-  min-height: 160px;
+  gap: 18px;
+  min-height: 170px;
+  background: linear-gradient(120deg, #fff 80%, #e3a53511 100%);
+  box-shadow: 0 2px 8px #e3a53522;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Highlight selected product card */
+.product-card.selected {
+  border-color: #ff003b;
+  box-shadow: 0 0 0 3px #ff003b44;
+  background: linear-gradient(120deg, #fff 60%, #ff003b11 100%);
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 24px #ff003b22;
+  border-color: #ff003b;
 }
 
 .product-card img {
@@ -193,6 +277,9 @@ body {
   height: 110px;
   object-fit: contain;
   flex-shrink: 0;
+  border-radius: 8px;
+  background: #fffbe6;
+  box-shadow: 0 1px 6px #e3a53522;
 }
 
 .product-card .product-info {
@@ -204,52 +291,222 @@ body {
 }
 
 .product-card h3 {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ff003b;
   margin-bottom: 8px;
+  letter-spacing: 1px;
 }
 
 .product-card p {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e3a535;
+  letter-spacing: 0.5px;
+}
+
+/* Product card details button */
+.product-details-btn {
+  margin-top: 10px;
+  background: #e3a535;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
   font-size: 14px;
-  color: #666;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-details-btn:hover {
+  background: #ff003b;
+}
+
+/* Product description overlay */
+.product-description-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000066;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.product-description-modal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #ff003b22;
+  padding: 32px 28px;
+  max-width: 400px;
+  width: 90%;
+  text-align: left;
+  position: relative;
+}
+
+.product-description-modal h3 {
+  color: #ff003b;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.product-description-modal p {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.product-description-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #ff003b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.product-description-close:hover {
+  color: #e3a535;
 }
 
 /* selected products */
 .selected-products {
-  margin: 40px 0;
-  padding: 20px;
-  border: 2px solid #000;
-  border-radius: 8px;
+  margin: 48px 0;
+  padding: 24px;
+  border: 2px solid #ff003b;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #fff 80%, #e3a53511 100%);
+  box-shadow: 0 2px 12px #ff003b22;
 }
 
 .selected-products h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff003b;
+  margin-bottom: 22px;
+  letter-spacing: 1.2px;
 }
 
 #selectedProductsList {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .generate-btn {
   width: 100%;
-  margin-top: 20px;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: 500;
+  margin-top: 22px;
+  padding: 18px;
+  font-size: 19px;
+  font-weight: 600;
   color: #fff;
-  background: #000;
+  background: linear-gradient(90deg, #ff003b 80%, #e3a535 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px #ff003b22;
 }
 
 .generate-btn:hover {
-  background: #666;
+  background: linear-gradient(90deg, #e3a535 80%, #ff003b 100%);
+  box-shadow: 0 4px 12px #e3a53544;
 }
 
 .generate-btn i {
-  margin-right: 8px;
+  margin-right: 10px;
+  color: #e3a535;
+}
+
+/* Remove button for selected products */
+.selected-product-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fffbe6;
+  border: 1px solid #e3a535;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 15px;
+  color: #333;
+  position: relative;
+}
+
+.selected-product-remove {
+  background: none;
+  border: none;
+  color: #ff003b;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 4px;
+  transition: color 0.2s;
+}
+
+.selected-product-remove:hover {
+  color: #e3a535;
+}
+
+#clearSelectedBtn {
+  width: auto;
+  background: #ff003b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+  display: block;
+}
+
+#clearSelectedBtn:hover {
+  background: #e3a535;
+  color: #fff;
+}
+
+/* Chat message boxes for user and assistant */
+.chat-message-user {
+  background: #fffbe6;
+  border: 1px solid #e3a535;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  align-self: flex-end;
+  max-width: 90%;
+  word-break: break-word;
+  box-shadow: 0 1px 4px #e3a53522;
+}
+
+.chat-message-assistant {
+  background: #f6f6fa;
+  border: 1px solid #ff003b;
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+  max-width: 90%;
+  word-break: break-word;
+  box-shadow: 0 1px 4px #ff003b22;
+  /* Ensure lists are contained and styled inside the box */
+}
+
+.chat-message-assistant ul,
+.chat-message-assistant ol {
+  margin: 10px 0 10px 24px;
+  padding: 0;
+}
+
+.chat-message-assistant li {
+  margin-bottom: 6px;
+  font-size: 17px;
+  color: #333;
+  word-break: break-word;
 }
